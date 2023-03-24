@@ -34,11 +34,14 @@ morse_code_dict = {
 # this is scratch.
 
 
-# Create a dummy sentence_variable, which convert the sentence to morse code
-sentence_variable = "Tanzil Ehsan"
-morse_code = ""
-for cha in sentence_variable:
-	for key in morse_code_dict:
-		if cha.capitalize() == key:  # Ignore case-sensitive in order for the statement to be true.
-			morse_code += morse_code_dict.get(key) + "   "
-print(f"Original : {sentence_variable} | Morse Code: {morse_code}")
+# turn this into function:
+def morse_code(sentence):
+	dummy_morse_code = ""
+	for cha in sentence:
+		for key in morse_code_dict:
+			if cha.capitalize() == key:  # Ignore case-sensitive in order for the statement to be true.
+				dummy_morse_code += morse_code_dict.get(key) + "   "
+	print(f"Original : {sentence} | Morse Code: {dummy_morse_code}")
+
+
+morse_code("Tanzil Ehsa")
