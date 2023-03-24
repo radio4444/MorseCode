@@ -27,17 +27,18 @@ morse_code_dict = {
 	"W": ".--",
 	"X": "-..-",
 	"Y": "-.--",
-	"Z": "--.."
+	"Z": "--..",
+	" ": "/"
 }
 
 # this is scratch.
 
-# Create a dummy word_variable, which convert the word to morse code
-word_variable = "Ehsan"
-morse_code = ""
-for cha in word_variable:
-	for key in morse_code_dict:
-		if cha.capitalize() == key: # Ignore case-sensitive in order for the statement to be true.
-			morse_code += morse_code_dict.get(key) + "   "
-print(f"Original : {word_variable} | Morse Code: {morse_code}")
 
+# Create a dummy sentence_variable, which convert the sentence to morse code
+sentence_variable = "Tanzil Ehsan"
+morse_code = ""
+for cha in sentence_variable:
+	for key in morse_code_dict:
+		if cha.capitalize() == key:  # Ignore case-sensitive in order for the statement to be true.
+			morse_code += morse_code_dict.get(key) + "   "
+print(f"Original : {sentence_variable} | Morse Code: {morse_code}")
