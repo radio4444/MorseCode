@@ -31,10 +31,7 @@ morse_code_dict = {
 	" ": "/"
 }
 
-# this is scratch.
 
-
-# turn this into function:
 def morse_code(sentence):
 	dummy_morse_code = ""
 	for cha in sentence:
@@ -44,4 +41,4 @@ def morse_code(sentence):
 	print(f"Original : {sentence} | Morse Code: {dummy_morse_code}")
 
 
-morse_code("Tanzil Ehsa")
+morse_code("Tanzil Ehsan")
