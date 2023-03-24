@@ -32,13 +32,20 @@ morse_code_dict = {
 }
 
 
-def morse_code(sentence):
+# Convert English sentence to Morse Code
+def morse_code_em(english: str) -> None:
 	dummy_morse_code = ""
-	for cha in sentence:
+	for cha in english:
 		for key in morse_code_dict:
 			if cha.capitalize() == key:  # Ignore case-sensitive in order for the statement to be true.
 				dummy_morse_code += morse_code_dict.get(key) + "   "
-	print(f"Original : {sentence} | Morse Code: {dummy_morse_code}")
+	if english != "":
+		print(f"Original : {english} | Morse Code: {dummy_morse_code}")
 
 
-morse_code("Tanzil Ehsan")
+# Input from the user:
+while True:
+	sentence = input("Input the message: ")
+	morse_code_em(sentence)
+	if sentence == "":
+		break
