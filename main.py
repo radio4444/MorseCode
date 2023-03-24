@@ -1,7 +1,7 @@
 # Credit to https://morsecode.world/international/translator.html
 # Using this website, to test my code. XD
 
-morse_code = {
+morse_code_dict = {
 	"A": ".-",
 	"B": "-...",
 	"C": "-.-.",
@@ -30,19 +30,14 @@ morse_code = {
 	"Z": "--.."
 }
 
-# Mini dictionary practice
-# Print format, and how to access the keys
-# print(f"{morse_code['A']} = {morse_code.get('A')}")
-# testing manually
-# print(f"A = {morse_code['A']}")
-# print(f"A = {morse_code.get('A')}, B = {morse_code['B']}")
-# for loop. From  A to H. 3 units space.
-# for keys in range(0, 5):
-# 	print(list(morse_code)[:keys])
-# print(list(morse_code)[:5])
-# for keys in morse_code:
-# 	print(f"{morse_code.get(keys)}")
+# this is scratch.
 
+# Create a dummy word_variable, which convert the word to morse code
+word_variable = "Ehsan"
+morse_code = ""
+for cha in word_variable:
+	for key in morse_code_dict:
+		if cha.capitalize() == key: # Ignore case-sensitive in order for the statement to be true.
+			morse_code += morse_code_dict.get(key) + "   "
+print(f"Original : {word_variable} | Morse Code: {morse_code}")
 
-
-# this is scratch. How to combine the letter into one word
