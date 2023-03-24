@@ -29,3 +29,5 @@ morse_code = {
 	"Y": "-.--",
 	"Z": "--.."
 }
+
+# this is scratch. testing out how to use join method
