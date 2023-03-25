@@ -31,11 +31,12 @@ morse_code_dict = {
 	" ": "/"
 }
 
+
 # this is scratch.
 
 
 # turn this into function:
-def morse_code(sentence):
+def morse_code(sentence):  # English to Morse Code
 	dummy_morse_code = ""
 	for cha in sentence:
 		for key in morse_code_dict:
