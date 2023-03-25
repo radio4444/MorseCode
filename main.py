@@ -32,7 +32,7 @@ morse_code_dict = {
 }
 
 
-# this is scratch.
+# this is scratch. morse_codeEMF(testing) branch
 
 
 # turn this into function:
