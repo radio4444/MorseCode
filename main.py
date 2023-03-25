@@ -62,14 +62,4 @@ while True:
 	if sentence == "":
 		break
 
-# this is MorseC_English(testing) branch
-morse_code_mef(". .... ... .- -.")
-morse_code_mef(".... .")  # output HE
-# how to iterate through string, where space it will stop
-string = ". ...."
-string_list = []
-for cha in range(0, len(string)):
-	if string[cha] != " ":
-		string_list += string[cha]
-# print("working cha")
-print(string.split(" "))
+
