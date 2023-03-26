@@ -39,7 +39,7 @@ def morse_code_emf(english: str) -> None:
 		for key in morse_code_dict:
 			if cha.capitalize() == key:  # Ignore case-sensitive in order for the statement to be true.
 				dummy_morse_code += morse_code_dict.get(key) + "   "
-	if english != "":
+	if english != "":  # you could comment this out. Not really needed.
 		print(f"Original : {english} | Morse Code: {dummy_morse_code}")
 
 
@@ -57,9 +57,13 @@ def morse_code_mef(morse_code: str) -> None:
 # Input from the user:
 while True:
 	sentence = input("Input the message: ")
-	# morse_code_emf(sentence)
-	morse_code_mef(sentence)
+	choice = input("Type English to Morse(EM) or Morse to English(ME): ")
+
+	if choice.upper() == "ME" or choice.upper() == "Morse to English":
+		morse_code_mef(sentence)
+	elif choice.upper() == "EM" or choice.upper() == "English to Morse":
+		morse_code_emf(sentence)
+	else:
+		print("Please type EM or ME")
 	if sentence == "":
 		break
-
-
