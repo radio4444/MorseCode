@@ -74,5 +74,4 @@ for cha in range(0, len(string)):
 # print("working cha")
 print(string.split(" "))
 
-
 # testing if this branch will follow the development or will create a new one.
