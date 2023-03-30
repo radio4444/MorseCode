@@ -58,13 +58,16 @@ def morse_code_mef(morse_code: str) -> None:
 # Input from the user:
 while True:
 	sentence = input("Input the message: ")
-	choice = input("Type English to Morse(EM) or Morse to English(ME): ")
-# Later: input will be able to detect me or em without user specifying it.
-	if choice.upper() == "ME" or choice.upper() == "Morse to English":
-		morse_code_mef(sentence)
-	elif choice.upper() == "EM" or choice.upper() == "English to Morse":
-		morse_code_emf(sentence)
+	if sentence != "":
+		choice = input("Type English to Morse(EM) or Morse to English(ME): ")
+	# Later: input will be able to detect me or em without user specifying it.
+		if choice.upper() == "ME" or choice.upper() == "Morse to English":
+			morse_code_mef(sentence)
+		elif choice.upper() == "EM" or choice.upper() == "English to Morse":
+			morse_code_emf(sentence)
+		else:
+			print("Please type EM or ME")
+		if sentence == "":
+			break
 	else:
-		print("Please type EM or ME")
-	if sentence == "":
 		break
