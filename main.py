@@ -1,5 +1,6 @@
 # Credit to https://morsecode.world/international/translator.html
 # Using this website, to test my code. XD
+# In order to restore directory, Git -> Rollback -> Changes -> Rollback
 
 morse_code_dict = {
 	"A": ".-",
