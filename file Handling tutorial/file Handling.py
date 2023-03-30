@@ -49,7 +49,8 @@ with open("file.txt", "r") as file:
 		word = line.split()
 		print(word)
 
-# read() reads the entire contents of a file and returns it as a single string.
-# readline() reads a single line from a file and returns it as a string.
-# readlines() reads all the lines from a file and returns them as a list of strings.
-# seek()  moves the file pointer to a specific position in a file, allowing you to read or write data from that position.
+# read() reads the entire contents of a file and returns it as a single string. [return string]
+# readline() reads a single line from a file and returns it as a string. [return string]
+# readlines() reads all the lines from a file and returns them as a list of strings. [return array]
+# seek()  moves the file pointer to a specific position in a file,
+#   allowing you to read or write data from that position.
