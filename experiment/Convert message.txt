@@ -1,2 +1,1 @@
-this is a sentence.
-This is another sentence.
+['this', 'is', 'a', 'sentence.', 'This', 'is', 'another', 'sentence.']
