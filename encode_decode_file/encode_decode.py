@@ -54,6 +54,7 @@ def morse_code_mef(morse_code: str) -> str:  # Convert Morse code to English
 
 
 # Open the input file in read mode and output file in write mode
-with open("Original message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
-	for sentence in r_file:  # iterate through the file line by line
-		w_file.write(str(morse_code_mef(sentence)))
+# Use it for reference, later delete
+# with open("Original message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
+# 	for sentence in r_file:  # iterate through the file line by line
+# 		w_file.write(str(morse_code_mef(sentence)))
