@@ -26,7 +26,7 @@ while True:  # Loop till no input message
         while file != "":
             choice_EorM = input("Type English to Morse(EM) or Morse to English(ME): ").upper()
             if choice_EorM == "ME" or choice_EorM == "Morse to English":
-                with open("English message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
+                with open("Morse message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
                     for sentence in r_file:  # iterate through the file line by line
                         sentence = sentence.strip()  # for the print message.
                         w_file.write(ed.morseCode_ME(sentence).strip())  # for the output file message.
