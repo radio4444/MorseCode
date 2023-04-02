@@ -4,7 +4,7 @@ import encode_decode as ed
 
 # Input from the user:
 while True:  # Loop till no input message
-    choice_SorF = input("Write message(W) or Input file(I): ").upper()
+    choice_SorF = input("Write message(W) or Input file(I) or Press Enter to exit: ").upper()
     if choice_SorF == "Write message" or choice_SorF == "W":
         sentence = input("Press enter to exit or Input message: ")
         # Later: input will be able to detect me or em without user specifying it.
@@ -21,19 +21,19 @@ while True:  # Loop till no input message
         else:  # Prompt (Write message or Input file) again
             print("Thank you for using \"write message.\"")
     elif choice_SorF == "Input file" or choice_SorF == "I":
-        file = input("Press enter to exit or Input file: ")
+        file = input("Press enter to exit or Input filename: ")
         # Later: input will be able to detect me or em without user specifying it.
         while file != "":
             choice_EorM = input("Type English to Morse(EM) or Morse to English(ME): ").upper()
             if choice_EorM == "ME" or choice_EorM == "Morse to English":
-                with open("Morse message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
+                with open(file, 'r') as r_file, open("Convert message.txt", 'w') as w_file:
                     for sentence in r_file:  # iterate through the file line by line
                         sentence = sentence.strip()  # for the print message.
                         w_file.write(ed.morseCode_ME(sentence).strip())  # for the output file message.
                         w_file.write("\n")
                 break
             elif choice_EorM == "EM" or choice_EorM == "English to Morse":
-                with open("English message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
+                with open(file, 'r') as r_file, open("Convert message.txt", 'w') as w_file:
                     for sentence in r_file:  # iterate through the file line by line
                         sentence = sentence.strip()  # for the print message.
                         w_file.write(ed.morseCode_EM(sentence).strip())  # for the output file message.
