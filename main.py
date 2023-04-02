@@ -9,7 +9,7 @@ cwd = os.getcwd()  # get current directory
 # Input from the user:
 while True:  # Loop till no input message
     choice_SorF = input("Write message(W) or Input file(I) or Press Enter to exit: ").upper()
-    if choice_SorF == "Write message" or choice_SorF == "W":
+    if choice_SorF == "WRITE MESSAGE" or choice_SorF == "W":
         sentence = input("Press enter to exit or Input message: ")
         # Later: input will be able to detect me or em without user specifying it.
         while sentence != "":
@@ -24,7 +24,7 @@ while True:  # Loop till no input message
                 print("Please type EM or ME")
         else:  # Prompt (Write message or Input file) again
             print("Thank you for using \"write message.\"")
-    elif choice_SorF == "Input file" or choice_SorF == "I":
+    elif choice_SorF == "INPUT FILE" or choice_SorF == "I":
         r_file = input("Press enter to exit or Input the filename: ")
         r_filepath = os.path.join(cwd, 'encode_decode_file', r_file+'.txt') # reading file from encode_decode_file directory
         # Later: input will be able to detect me or em without user specifying it.
