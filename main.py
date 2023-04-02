@@ -1,70 +1,53 @@
 # Credit to https://morsecode.world/international/translator.html
 # Using this website, to test my code. XD
+import encode_decode as ed
+import os
 
-morse_code_dict = {
-	"A": ".-",
-	"B": "-...",
-	"C": "-.-.",
-	"D": "-..",
-	"E": ".",
-	"F": "..-.",
-	"G": "--.",
-	"H": "....",
-	"I": "..",
-	"J": ".---",
-	"K": "-.-",
-	"L": ".-..",
-	"M": "--",
-	"N": "-.",
-	"O": "---",
-	"P": ".--.",
-	"Q": "-.-",
-	"R": ".-.",
-	"S": "...",
-	"T": "-",
-	"U": "..-",
-	"V": "...-",
-	"W": ".--",
-	"X": "-..-",
-	"Y": "-.--",
-	"Z": "--..",
-	" ": "/",
-	".": ".-.-.-"
-}
-
-
-# Convert English sentence to Morse Code
-def morse_code_emf(english: str) -> None:
-	dummy_morse_code = ""
-	for cha in english:
-		for key in morse_code_dict:
-			if cha.capitalize() == key:  # Ignore case-sensitive in order for the statement to be true.
-				dummy_morse_code += morse_code_dict.get(key) + "   "
-	if english != "":  # you could comment this out. Not really needed.
-		print(f"Original : {english} | Morse Code: {dummy_morse_code}")
-
-
-# Convert Morse code to English
-def morse_code_mef(morse_code: str) -> None:
-	dummy_english = ""
-	for index in morse_code.split(" "):  # morse_code.split(" ") is a list, where index iterate through it
-		for key_index in morse_code_dict.keys():
-			if index == morse_code_dict.get(key_index):
-				dummy_english += key_index
-
-	print(f"Original : {morse_code} | English: {dummy_english}")
+cwd = os.getcwd()  # get current directory
 
 
 # Input from the user:
-while True:
-	sentence = input("Input the message: ")
-	choice = input("Type English to Morse(EM) or Morse to English(ME): ")
-# Later: input will be able to detect me or em without user specifying it.
-	if choice.upper() == "ME" or choice.upper() == "Morse to English":
-		morse_code_mef(sentence)
-	elif choice.upper() == "EM" or choice.upper() == "English to Morse":
-		morse_code_emf(sentence)
-	else:
-		print("Please type EM or ME")
-	if sentence == "":
-		break
+while True:  # Loop till no input message
+    choice_SorF = input("Write message(W) or Input file(I) or Press Enter to exit: ").upper()
+    if choice_SorF == "Write message" or choice_SorF == "W":
+        sentence = input("Press enter to exit or Input message: ")
+        # Later: input will be able to detect me or em without user specifying it.
+        while sentence != "":
+            choice_EorM = input("Type English to Morse(EM) or Morse to English(ME): ").upper()
+            if choice_EorM == "ME" or choice_EorM == "Morse to English":
+                ed.morseCode_ME(sentence)
+                break
+            elif choice_EorM == "EM" or choice_EorM == "English to Morse":
+                ed.morseCode_EM(sentence)
+                break
+            else:  # Ask the user again, if they didn't enter either.
+                print("Please type EM or ME")
+        else:  # Prompt (Write message or Input file) again
+            print("Thank you for using \"write message.\"")
+    elif choice_SorF == "Input file" or choice_SorF == "I":
+        r_file = input("Press enter to exit or Input the filename: ")
+        r_filepath = os.path.join(cwd, 'encode_decode_file', r_file+'.txt') # reading file from encode_decode_file directory
+        # Later: input will be able to detect me or em without user specifying it.
+        while r_file != "":
+            w_file = input("Output the filename: ")
+            w_filepath = os.path.join(cwd, 'encode_decode_file', w_file + '.txt')
+            choice_EorM = input("Type English to Morse(EM) or Morse to English(ME): ").upper()
+            if choice_EorM == "ME" or choice_EorM == "Morse to English":
+                with open(r_filepath, 'r') as r_file, open(w_filepath, 'w') as w_file:
+                    for sentence in r_file:  # iterate through the file line by line
+                        sentence = sentence.strip()  # for the print message.
+                        w_file.write(ed.morseCode_ME(sentence).strip())  # for the output file message.
+                        w_file.write("\n")
+                break
+            elif choice_EorM == "EM" or choice_EorM == "English to Morse":
+                with open(r_filepath, 'r') as r_file, open(w_filepath, 'w') as w_file:
+                    for sentence in r_file:  # iterate through the file line by line
+                        sentence = sentence.strip()  # for the print message.
+                        w_file.write(ed.morseCode_EM(sentence).strip())  # for the output file message.
+                        w_file.write("\n")
+                break
+            else:  # Ask the user again, if they didn't enter either.
+                print("Please type EM or ME")
+    else:  # End the program.
+        print("Thank you for using \"morse program.\"")
+        break
