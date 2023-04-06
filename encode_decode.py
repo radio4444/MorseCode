@@ -52,28 +52,4 @@ def morseCode_ME(morse_code: str) -> str:  # Convert Morse code to English
     return dummy_english
 
 
-# Open the input file in read mode and output file in write mode
-# old version.
-# with open("Morse message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
-#     for sentence in r_file:  # iterate through the file line by line
-#         w_file.write(morseCode_ME(sentence))
 
-# Problem:
-# 	- Output file would have leading (spaces at the beginning) and trailing (spaces at the end) characters
-# 		because of the newline character in input file
-#	- Because of the newline character, it would mess up morse code to english.
-#   - English to morse code will be fine but the morse code would have trailing and leading character
-# Solution:
-# 	- using strip to remove any leading and trailing character
-# 	- create newline character, after readline execute.
-
-# with open("Morse message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
-# 	for sentence in r_file:  # iterate through the file line by line
-# 		sentence = sentence.strip()
-# 		w_file.write(morseCode_ME(sentence).strip())
-# 		w_file.write("\n")
-# with open("English message.txt", 'r') as r_file, open("Convert message.txt", 'w') as w_file:
-# 	for sentence in r_file:  # iterate through the file line by line
-# 		sentence = sentence.strip()
-# 		w_file.write(morseCode_EM(sentence).strip())
-# 		w_file.write("\n")
